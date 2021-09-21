@@ -234,7 +234,7 @@ const Projects = ({
                   "A personal website I made becuase I was bored",
                   "Here I showcase the projects I work on and my active social links",
                 ]}
-                projectCodeURL="https://github.com/glappy-py/radioglobal"
+                projectCodeURL="https://github.com/glappy-py/portfolioCode"
                 platformLogos={[web]}
               />
             </div>
