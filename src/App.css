@@ -1,0 +1,474 @@
+.app {
+  height: 100vh;
+  --max-height: 90vh;
+}
+a {
+  text-decoration: none;
+  color: rgb(62, 182, 223);
+}
+.statusPanel {
+  width: 90vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.navbar {
+  position: fixed;
+  z-index: 99;
+  height: 50px;
+  align-items: center;
+  display: none;
+  width: 100vw;
+  background-color: black;
+  border-bottom: 2px solid #202020;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  flex-direction: column;
+}
+
+.subMenuItem {
+  text-transform: none;
+  background-color: #080808;
+  border-bottom: 1px solid #202020;
+  padding-block: 1vh;
+  padding-inline: 20vw;
+}
+
+.menuItem {
+  width: 100vw;
+  margin-top: 10px;
+  background-color: black;
+  display: flex;
+  border-top: 1px solid rgb(19, 19, 19);
+  border-bottom: 1px solid rgb(19, 19, 19);
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@keyframes openMenu {
+  from {
+    height: initial;
+  }
+  to {
+    height: 200px;
+  }
+}
+@keyframes openSubMenu {
+  from {
+    height: initial;
+  }
+  to {
+    height: 380px;
+  }
+}
+@keyframes closeMenu {
+  from {
+    height: initial;
+  }
+  to {
+    height: 50px;
+  }
+}
+@keyframes closeSubMenu {
+  from {
+    height: initial;
+  }
+  to {
+    height: 200px;
+  }
+}
+.line {
+  fill: none;
+  stroke: white;
+  stroke-width: 6;
+  transition: stroke-dasharray 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+.closingmenu {
+  animation: closeMenu ease-in-out 0.3s forwards;
+  animation-delay: 3000;
+}
+.closingsubmenu {
+  animation: closeSubMenu ease-in-out 0.3s forwards;
+}
+
+.openingmenu {
+  animation: openMenu ease-in-out 0.3s forwards;
+}
+.openingsubmenu {
+  animation: openSubMenu ease-in-out 0.3s forwards;
+  animation-delay: 3000;
+}
+
+.menu {
+  z-index: 100;
+  display: none;
+  position: fixed;
+  margin-top: 8px;
+  margin-left: 5px;
+}
+
+.panels {
+  display: flex;
+  max-width: fit-content;
+  min-height: fit-content;
+  flex-direction: row;
+}
+
+.textPanel {
+  width: 10vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.textPanelButton {
+  cursor: pointer;
+  background-color: black;
+  flex-grow: 1;
+  width: inherit;
+  font-weight: bolder;
+  display: flex;
+  user-select: none;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  animation: buttonFadeOut ease-in 0.2s;
+}
+
+.projectsPanelButton {
+  cursor: pointer;
+  background-color: black;
+  width: 20vw;
+  height: 50px;
+  font-weight: 600;
+  display: flex;
+  user-select: none;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  animation: buttonFadeOut ease-in 0.2s;
+}
+
+.downloads {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+}
+
+.projectsPanelButton:hover {
+  animation: buttonFadeIn ease-in 0.2s forwards;
+}
+.projectsPanel {
+  width: 20vw;
+  height: var(--max-height);
+}
+
+.textPanelButton:hover {
+  animation: buttonFadeIn ease-in 0.2s forwards;
+}
+
+@keyframes buttonFadeIn {
+  from {
+    background-color: black;
+  }
+  to {
+    background-color: rgb(19, 19, 19);
+  }
+}
+
+@keyframes buttonFadeOut {
+  from {
+    background: rgb(19, 19, 19);
+  }
+  to {
+    background-color: black;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.brandLogo {
+  width: 200px;
+  height: 280px;
+  position: relative;
+  user-select: none;
+}
+
+.opaque {
+  opacity: 0;
+}
+
+.websiteURL {
+  margin-top: 30px;
+}
+
+.transparent {
+  opacity: 1;
+}
+
+.opening {
+  animation: fadeIn ease-in-out 0.2s forwards;
+  animation-delay: calc(var(--order) * 200ms);
+}
+.openingsubitem {
+  animation: fadeIn ease-in-out 0.02s forwards;
+  animation-delay: calc(var(--order) * 20ms);
+}
+
+.openingExp {
+  animation: fadeIn ease-in-out 0.2s forwards;
+  animation-delay: calc(var(--order) * 200ms);
+  opacity: 1;
+}
+
+.openingWord {
+  animation: fadeIn ease-in-out 0.3s forwards;
+  animation-delay: calc(var(--paraorder) * 20ms);
+}
+
+.closing {
+  animation: fadeOut ease-in-out 0.2s forwards;
+  animation-delay: calc(var(--order) * 200ms);
+}
+.closingsubitem {
+  animation: fadeOut ease-in-out 0s forwards;
+  animation-delay: calc(var(--order) * 20ms);
+}
+
+.closingExp {
+  animation: fadeOut ease-in-out 0.2s forwards;
+  animation-delay: calc(var(--order) * 200ms);
+}
+
+.closingWord {
+  animation: fadeOut ease-in-out 0.3s forwards;
+  animation-delay: calc(var(--paraorder) * 20ms);
+}
+
+.projectCodeURL {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 50px;
+  user-select: none;
+}
+
+.platformLogos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+  user-select: none;
+}
+
+.platformLogo {
+  width: 50px;
+  height: 50px;
+}
+
+.panelSection {
+  height: var(--max-height);
+  width: inherit;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+#social {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projectItem {
+  margin-left: 10px;
+  margin-top: 10px;
+  color: white;
+  flex-grow: 1;
+}
+
+.projectItemHeader {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  width: inherit;
+  user-select: none;
+}
+
+.projectLogo {
+  width: 100px;
+  height: 100px;
+}
+
+.projectName {
+  font-weight: bolder;
+  display: flex;
+  font-size: 36px;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.socialRow {
+  display: flex;
+  width: 90vw;
+  justify-content: space-around;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background-color: black;
+  border-left: 1px solid #202020;
+  border-right: 1px solid #202020;
+}
+
+.cardImage {
+  width: 150px;
+  height: 210px;
+  align-self: center;
+  user-select: none;
+}
+
+.cardText {
+  color: white;
+  margin-top: 10px;
+  align-self: center;
+  font-weight: 400;
+}
+
+.cardButton {
+  width: inherit;
+  height: 30px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(199, 199, 199);
+  background-color: black;
+  font-weight: 400;
+  border: 1px solid rgb(31, 31, 31);
+  margin-top: 10px;
+  align-self: center;
+  cursor: pointer;
+  user-select: none;
+  animation: buttonFadeOut ease-in 0.1s forwards;
+}
+
+.button {
+  width: inherit;
+  height: 30px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(199, 199, 199);
+  background-color: black;
+  font-weight: 400;
+  border: 1px solid rgb(31, 31, 31);
+  align-self: center;
+  cursor: pointer;
+  margin-left: 20px;
+  user-select: none;
+  animation: buttonFadeOut ease-in 0.1s forwards;
+}
+
+.cardButton:hover {
+  animation: buttonFadeIn ease-in 0.1s forwards;
+}
+.button:hover {
+  animation: buttonFadeIn ease-in 0.1s forwards;
+}
+
+@media screen and (max-width: 800px) {
+  .projectsPanel {
+    display: none;
+  }
+  .textPanel {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+  }
+  .menu {
+    display: flex;
+  }
+  .projectItem {
+    margin-top: calc(100vh - var(--max-height));
+  }
+}
+@media screen and (max-width: 620px) {
+  .socialRow {
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+  }
+  #social {
+    height: auto;
+  }
+  .projectItem {
+    margin-left: 0;
+  }
+  .projectName {
+    margin-left: 20px;
+  }
+}
