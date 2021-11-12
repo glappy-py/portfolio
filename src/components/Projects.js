@@ -5,6 +5,7 @@ import fallingblocks from "../img/fallingblocks.jpg";
 import radioglobal from "../img/radioglobal.jpg";
 import projectsofglappy from "../img/projectsofglappy.jpg";
 import mario from "../img/mario.jpg";
+import spidey from '../img/spidey.jpg'
 import zoombot from "../img/zoombot.jpg";
 // Platform logos
 import windows from "../img/windows.jpg";
@@ -70,7 +71,7 @@ const Projects = ({
               }}
               style={{ "--order": 1 }}
             >
-              <div className="projectsPanelButton">Falling Blocks</div>
+              <div className="projectsPanelButton">FallingBlocks</div>
             </div>
             <div
               className={reverse ? "closing transparent" : "opening opaque"}
@@ -90,7 +91,17 @@ const Projects = ({
               }}
               style={{ "--order": 3 }}
             >
-              <div className="projectsPanelButton">Zoom Bot</div>
+              <div className="projectsPanelButton">ZoomBot</div>
+            </div>
+            <div
+              className={reverse ? "closing transparent" : "opening opaque"}
+              onClick={() => {
+                transitionToProjectItem("spideycli");
+                setStartWithProjectItem("spideycli");
+              }}
+              style={{ "--order": 5 }}
+            >
+              <div className="projectsPanelButton">SpideyCLI</div>
             </div>
             <div
               className={reverse ? "closing transparent" : "opening opaque"}
@@ -108,7 +119,7 @@ const Projects = ({
                 transitionToProjectItem("projectsofglappy");
                 setStartWithProjectItem("projectsofglappy");
               }}
-              style={{ "--order": 5 }}
+              style={{ "--order": 6 }}
             >
               <div className="projectsPanelButton">projectsofglappy</div>
             </div>
@@ -120,7 +131,7 @@ const Projects = ({
               <ProjectItem
                 projectLogo={fallingblocks}
                 projectID="fallingblocks"
-                projectName="Falling Blocks"
+                projectName="FallingBlocks"
                 shuffle={shuffle}
                 reverseForProjects={reverseForProjects}
                 setReverseForProjects={setReverseForProjects}
@@ -169,7 +180,7 @@ const Projects = ({
               />
               <ProjectItem
                 projectLogo={zoombot}
-                projectName="Zoom Bot"
+                projectName="ZoomBot"
                 projectID="zoombot"
                 shuffle={shuffle}
                 reverseForProjects={reverseForProjects}
@@ -182,7 +193,7 @@ const Projects = ({
                   "Join your zoom meetings with one click.",
                   "A console application where in you enter the name of the meeting you want to join and Zoom Bot takes care of the meeting id and passwords for you",
                   "Check out the GitHub repo for configuration procedures",
-                  "WARNING : This program is deprecated, Zoom Bot is now integrated into MarioCLI with better commands and functionality",
+                  "WARNING : This program is deprecated, Zoom Bot is now integrated into MarioCLI and SpideyCLI with better commands and functionality",
                 ]}
                 projectCodeURL="https://github.com/glappy-py/zoom_bot"
                 platformLogos={[windows]}
@@ -190,6 +201,30 @@ const Projects = ({
                   {
                     platform: "windows",
                     url: "https://github.com/glappy-py/zoom_bot/releases/download/v3/zoom.bot.exe",
+                  },
+                ]}
+              />
+              <ProjectItem
+                projectLogo={spidey}
+                projectName="SpideyCLI"
+                projectID="spideycli"
+                shuffle={shuffle}
+                reverseForProjects={reverseForProjects}
+                setReverseForProjects={setReverseForProjects}
+                currentProjectItem={currentProjectItem}
+                setCurrentProjectItem={setCurrentProjectItem}
+                setTransitioningToProjectItem={setTransitioningToProjectItem}
+                transitioningToProjectItem={transitioningToProjectItem}
+                projectDescription={[
+                  "Successor to the MarioCLI,", " SpideyCLI packs a greater punch of utility tools for programmers, like managing all your meeting IDs and passwords and automatically joining them, using linux-like terminal commands on your windows machine. The list is long and continues to grow longer, thanks to the built in auto updater that comes with SpideyCLI, so you don't have to manually update it from the repos",
+                  "use spidey help to get a list of commands",
+                ]}
+                projectCodeURL="https://github.com/glappy-py/spideycli"
+                platformLogos={[windows]}
+                downloads={[
+                  {
+                    platform: "windows",
+                    url: "https://github.com/glappy-py/spideycli/releases/download/latest/SpideyCLI.zip",
                   },
                 ]}
               />
@@ -204,7 +239,7 @@ const Projects = ({
                 setCurrentProjectItem={setCurrentProjectItem}
                 setTransitioningToProjectItem={setTransitioningToProjectItem}
                 transitioningToProjectItem={transitioningToProjectItem}
-                projectDescription={[
+                projectDescription={["WARNING : This tool is now deprecated and is replaced by SpideyCLI",
                   "The perfect productivity tool for programmers. It comes integrated with Zoom Bot, Meet Bot and marioTasks to manage your meetings and keep a check on your tasks. It also comes with few shorthand commands for making nodejs and react projects",
                   "installation instructions are included in the downloadable package",
                   "use mario help to get a list of commands",
@@ -214,7 +249,7 @@ const Projects = ({
                 downloads={[
                   {
                     platform: "windows",
-                    url: "https://github.com/glappy-py/radioglobal/releases/download/V2.4.0/RadioGlobal.apk",
+                    url: "https://github.com/glappy-py/MarioCLI/releases/download/v1.0/MarioCLI.installer.zip",
                   },
                 ]}
               />

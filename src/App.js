@@ -42,8 +42,8 @@ function App() {
               ? "navbar openingmenu openingsubmenu"
               : "navbar openingmenu"
             : subMenuOpen
-            ? "navbar closingmenu closingSubMenu"
-            : "navbar closingmenu"
+              ? "navbar closingmenu closingSubMenu"
+              : "navbar closingmenu"
         }
       >
         <div
@@ -121,6 +121,24 @@ function App() {
               }}
             >
               - Zoom Bot
+            </div>
+            <div
+              className={
+                subMenuOpen
+                  ? "subMenuItem openingsubitem opaque"
+                  : "subMenuItem closingsubitem transparent"
+              }
+              style={{ "--order": 4 }}
+              onClick={() => {
+                document.getElementsByClassName("menu")[0].click();
+                setTimeout(() => {
+                  navigateTo("projects");
+
+                  setProjectItem("spideycli");
+                }, 300);
+              }}
+            >
+              - SpideyCLI
             </div>
             <div
               className={
