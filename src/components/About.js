@@ -4,11 +4,10 @@ import { useState, useEffect } from "react";
 
 const About = ({
   currentPhase,
-  readyForTransition,
-  setReadyForTransition,
   setCurrentPhase,
   transitioningTo,
   shuffle,
+  navigateTo
 }) => {
   const [reverse, setReverse] = useState(false);
   // let orderOfDivs = [1, 2, 3, 4, 5, 6];
@@ -34,7 +33,7 @@ const About = ({
             className={reverse ? "closing transparent" : "opening opaque"}
             style={{ "--order": 1, color: "white" }}
           >
-            I don't know what to put in here
+            Hey there, I am Satwik Verma, this page is under construction, you can check out my <span className="hyperlink" onClick={() => { navigateTo("projects") }}>projects</span> and <span className="hyperlink" onClick={() => { navigateTo("social") }}>social links</span> for now
           </div>
         </div>
       ) : (

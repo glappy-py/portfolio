@@ -5,7 +5,7 @@ import fallingblocks from "../img/fallingblocks.jpg";
 import radioglobal from "../img/radioglobal.jpg";
 import projectsofglappy from "../img/projectsofglappy.jpg";
 import mario from "../img/mario.jpg";
-import spidey from '../img/spidey.jpg'
+import spidey from "../img/spidey.jpg";
 import zoombot from "../img/zoombot.jpg";
 // Platform logos
 import windows from "../img/windows.jpg";
@@ -121,7 +121,7 @@ const Projects = ({
               }}
               style={{ "--order": 6 }}
             >
-              <div className="projectsPanelButton">projectsofglappy</div>
+              <div className="projectsPanelButton">glappyverma.ml</div>
             </div>
           </div>
           {currentPhase == "" ? (
@@ -216,7 +216,8 @@ const Projects = ({
                 setTransitioningToProjectItem={setTransitioningToProjectItem}
                 transitioningToProjectItem={transitioningToProjectItem}
                 projectDescription={[
-                  "Successor to the MarioCLI,", " SpideyCLI packs a greater punch of utility tools for programmers, like managing all your meeting IDs and passwords and automatically joining them, using linux-like terminal commands on your windows machine. The list is long and continues to grow longer, thanks to the built in auto updater that comes with SpideyCLI, so you don't have to manually update it from the repos",
+                  "Successor to the MarioCLI,",
+                  " SpideyCLI packs a greater punch of utility tools for programmers, like managing all your meeting IDs and passwords and automatically joining them, using linux-like terminal commands on your windows machine. The list is long and continues to grow longer, thanks to the built in auto updater that comes with SpideyCLI, so you don't have to manually update it from the repos",
                   "use spidey help to get a list of commands",
                 ]}
                 projectCodeURL="https://github.com/glappy-py/spideycli"
@@ -239,7 +240,8 @@ const Projects = ({
                 setCurrentProjectItem={setCurrentProjectItem}
                 setTransitioningToProjectItem={setTransitioningToProjectItem}
                 transitioningToProjectItem={transitioningToProjectItem}
-                projectDescription={["WARNING : This tool is now deprecated and is replaced by SpideyCLI",
+                projectDescription={[
+                  "WARNING : This tool is now deprecated and is replaced by SpideyCLI",
                   "The perfect productivity tool for programmers. It comes integrated with Zoom Bot, Meet Bot and marioTasks to manage your meetings and keep a check on your tasks. It also comes with few shorthand commands for making nodejs and react projects",
                   "installation instructions are included in the downloadable package",
                   "use mario help to get a list of commands",
@@ -255,7 +257,7 @@ const Projects = ({
               />
               <ProjectItem
                 projectLogo={projectsofglappy}
-                projectName="Projects Of Glappy"
+                projectName="glappyverma.ml"
                 projectID="projectsofglappy"
                 currentProjectItem={currentProjectItem}
                 shuffle={shuffle}
@@ -263,13 +265,13 @@ const Projects = ({
                 setReverseForProjects={setReverseForProjects}
                 setCurrentProjectItem={setCurrentProjectItem}
                 setTransitioningToProjectItem={setTransitioningToProjectItem}
-                websiteURL="projectsofglappy.tk"
+                websiteURL="glappyverma.ml"
                 transitioningToProjectItem={transitioningToProjectItem}
                 projectDescription={[
                   "A personal website I made becuase I was bored",
                   "Here I showcase the projects I work on and my active social links",
                 ]}
-                projectCodeURL="https://github.com/glappy-py/portfolioCode"
+                projectCodeURL="https://github.com/glappy-py/portfolio"
                 platformLogos={[web]}
               />
             </div>

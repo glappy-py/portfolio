@@ -5,11 +5,10 @@ import About from "./components/About";
 import Social from "./components/Social";
 
 function App() {
-  const [currentPhase, setCurrentPhase] = useState("projects");
-  const [readyForTransition, setReadyForTransition] = useState(false);
-  const [transitioningTo, setTransitioningTo] = useState("projects");
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [currentPhase, setCurrentPhase] = useState("about");
+  const [transitioningTo, setTransitioningTo] = useState("about");
   const [projectItem, setProjectItem] = useState("fallingblocks");
+  const [menuOpen, setMenuOpen] = useState(false);
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const navigateTo = (section) => {
     setTransitioningTo(section);
@@ -269,32 +268,24 @@ function App() {
         <div className="statusPanel">
           <Projects
             currentPhase={currentPhase}
-            readyForTransition={readyForTransition}
-            setReadyForTransition={setReadyForTransition}
             setCurrentPhase={setCurrentPhase}
             transitioningTo={transitioningTo}
-            setTransitioningTo={setTransitioningTo}
             shuffle={shuffle}
             startWithProjectItem={projectItem}
             setStartWithProjectItem={setProjectItem}
           />
           <About
             currentPhase={currentPhase}
-            readyForTransition={readyForTransition}
-            setReadyForTransition={setReadyForTransition}
             setCurrentPhase={setCurrentPhase}
             transitioningTo={transitioningTo}
-            setTransitioningTo={setTransitioningTo}
             shuffle={shuffle}
+            navigateTo={navigateTo}
           />
           <Social
             currentPhase={currentPhase}
-            readyForTransition={readyForTransition}
-            setReadyForTransition={setReadyForTransition}
             shuffle={shuffle}
             setCurrentPhase={setCurrentPhase}
             transitioningTo={transitioningTo}
-            setTransitioningTo={setTransitioningTo}
           />
         </div>
       </div>
