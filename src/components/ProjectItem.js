@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-
 const ProjectItem = ({
   projectLogo,
   projectDescription,
@@ -72,21 +71,21 @@ const ProjectItem = ({
             {projectDescription === null
               ? ""
               : projectDescription.map((para) => (
-                  <p>
-                    {para.split(" ").map((word) => (
-                      <span
-                        style={{ "--paraorder": orderOfDesc[counter++] }}
-                        className={
-                          reverseForProjects
-                            ? "closingWord transparent"
-                            : "openingWord opaque"
-                        }
-                      >
-                        {word + " "}
-                      </span>
-                    ))}
-                  </p>
-                ))}
+                <p style={{ fontWeight: 600 }}>
+                  {para.split(" ").map((word) => (
+                    <span
+                      style={{ "--paraorder": orderOfDesc[counter++] }}
+                      className={
+                        reverseForProjects
+                          ? "closingWord transparent"
+                          : "openingWord opaque"
+                      }
+                    >
+                      {word + " "}
+                    </span>
+                  ))}
+                </p>
+              ))}
           </div>
           {projectCodeURL === null ? (
             ""
@@ -97,11 +96,11 @@ const ProjectItem = ({
                   ? "projectCodeURL closing transparent"
                   : "projectCodeURL opening opaque"
               }
-              style={{ "--order": orderOfSections++ }}
+              style={{ "--order": orderOfSections++, fontWeight: 600 }}
             >
               Check out the code on GitHub
               <a href={projectCodeURL} target="_blank" rel="noreferrer">
-                <div className="button">View Code</div>
+                <div className="BWButton" style={{ fontWeight: 600 }}>View Code</div>
               </a>
             </div>
           )}
@@ -113,7 +112,7 @@ const ProjectItem = ({
                 className={
                   reverseForProjects ? "closing transparent" : "opening opaque"
                 }
-                style={{ "--order": orderOfSections++ }}
+                style={{ "--order": orderOfSections++, fontWeight: 600 }}
               >
                 Available on platforms
               </span>
@@ -142,7 +141,7 @@ const ProjectItem = ({
                 className={
                   reverseForProjects ? "closing transparent" : "opening opaque"
                 }
-                style={{ "--order": orderOfSections++ }}
+                style={{ "--order": orderOfSections++, fontWeight: 600 }}
               >
                 Check it out on
               </span>
@@ -152,7 +151,7 @@ const ProjectItem = ({
                 className={
                   reverseForProjects ? "closing transparent" : "opening opaque"
                 }
-                style={{ "--order": orderOfSections++, marginLeft: 5 }}
+                style={{ "--order": orderOfSections++, marginLeft: 5, color: 'rgb(52, 154, 238)', fontWeight: 600 }}
               >
                 {websiteURL}
               </a>
@@ -186,11 +185,12 @@ const ProjectItem = ({
                         display: "flex",
                         flexDirection: "row",
                         alignItems: "center",
+                        fontWeight: 600
                       }}
                     >
                       Download for {ele.platform} :{" "}
                       <a href={ele.url}>
-                        <div className="button">Download</div>{" "}
+                        <div className="BWButton" style={{ fontWeight: 600 }}>Download</div>{" "}
                       </a>
                     </span>
                   ))}
