@@ -100,7 +100,7 @@ const ProjectItem = ({
             >
               Check out the code on GitHub
               <a href={projectCodeURL} target="_blank" rel="noreferrer">
-                <div className="BWButton" style={{ fontWeight: 600 }}>View Code</div>
+                <div className="button" style={{ fontWeight: 600 }}>View Code</div>
               </a>
             </div>
           )}
@@ -190,7 +190,7 @@ const ProjectItem = ({
                     >
                       Download for {ele.platform} :{" "}
                       <a href={ele.url}>
-                        <div className="BWButton" style={{ fontWeight: 600 }}>Download</div>{" "}
+                        <div className="button" style={{ fontWeight: 600 }}>Download</div>{" "}
                       </a>
                     </span>
                   ))}

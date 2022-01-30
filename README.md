@@ -1,2 +1,5 @@
-# portfolioCode
- A website I made to showcase my projects and social media links
+# Glappyverma.ml
+
+My personal portfolio website
+
+### Check it out on [glappyverma.ml](https://glappyverma.ml/)

@@ -3,7 +3,6 @@ import { useState } from "react";
 import Projects from "./components/Projects";
 import About from "./components/About";
 import Social from "./components/Social";
-
 function App() {
   const [currentPhase, setCurrentPhase] = useState("about");
   const [transitioningTo, setTransitioningTo] = useState("about");
